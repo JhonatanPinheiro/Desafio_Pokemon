@@ -50,3 +50,7 @@
     
 }
 
+#nome_do_pokemon{
+    text-transform: capitalize;
+}
+
