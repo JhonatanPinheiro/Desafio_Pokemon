@@ -61,7 +61,7 @@ $(document).ready(function () {
                     tipoPokemon = 'fire';
                 }
 
-                else if (climaChuva == 'chovendo') { //------------->
+                else if (climaChuva == 'chovendo') { 
                     tipoPokemon = 'electric';
                 }
 
@@ -69,7 +69,7 @@ $(document).ready(function () {
                     tipoPokemon = 'normal';
                 }
 
-                // console.log(climaChuva)
+    
                 if (data) {
                     $.ajax({
                         url: `https://pokeapi.co/api/v2/type/${tipoPokemon}`,
@@ -81,25 +81,9 @@ $(document).ready(function () {
                             var arrayPokemons = data.pokemon;
                             var numeroAleatorio = Math.floor(Math.random() * (data.pokemon.length + 1));
 
-                            //  console.log(numeroAleatorio);
-
                             var pokemonEscolhidoAleatorio = arrayPokemons[numeroAleatorio].pokemon.name;
                             var pokemonEscolhidoImg = arrayPokemons[numeroAleatorio].pokemon.url;
 
-                            console.log('array');
-                            console.log(arrayPokemons);
-
-                            console.log('pokemonEscolhido');
-                            console.log(pokemonEscolhidoAleatorio);
-
-                            console.log('pokemonEscolhidoImg');
-                            console.log(pokemonEscolhidoImg);
-
-                            console.log('NumeroAleatório');
-                            console.log(numeroAleatorio);
-
-
-                            //
                             if(data){
 
                                     $.ajax({
@@ -113,12 +97,6 @@ $(document).ready(function () {
 
                                             var caminhoUrl = data.sprites.front_default;
 
-                                            console.log('segundaData');
-                                            console.log(data);
-
-                                            console.log('VariavelUrl');
-                                            console.log(caminhoUrl);
-
                                             $("#nome_do_pokemon").html("<span id='nome-do-pokemon'>" + pokemonEscolhidoAleatorio + "</span>");
                                            
                                             $("#div_img_do_pokemon").html("<img class='img-pokemon' src='" + caminhoUrl + "'>");
@@ -127,7 +105,7 @@ $(document).ready(function () {
                                    
                                     });
                             }
-                            //
+                          
                         }
 
                     });
