@@ -79,7 +79,7 @@ $(document).ready(function () {
                         success: function (data) {
                             console.log(data);
                             var arrayPokemons = data.pokemon;
-                            var numeroAleatorio = Math.floor(Math.random() * data.pokemon.length) + 1;
+                            var numeroAleatorio = Math.floor(Math.random() * (data.pokemon.length + 1));
 
                             //  console.log(numeroAleatorio);
 
