@@ -22,51 +22,48 @@
        
 
         <div class="div-container-principal"> 
-            <div>
-                <img class="img-logo-principal" src="imagens/logo.jpeg">
-            </div>
-
-            <p class="p-informativo">
-                Informe a <strong>cidade</strong> para visualizar um pokémon de acordo com o clima
-            </p>
-
-            <div class="div-form">
-                <form class="form">
-                    <label>Cidade:</label>
-                    <input class="input-cidade" id="input-cidade" type="text" placeholder="Sumaré">
-                </form>
-
-                <input id="botao_buscar_pokemon" class="input-botao-buscar-pokemon" type="submit" value="Buscar Pokemon">
-                </input>
-               
-            </div>
-
-           
-            
-
-
-
-            <div  id="div-principal-resultado" class="div-principal-resultado">
+            <div class="div-conteudo-principal">
                 
-                <div id="Aqui" class="Aqui"></div>
-                    
-                <div id="">
-                    Clima
-                </div>
-                <div id="">
-                   
-                    <p id="nome_do_pokemon"></p>
+                <div>
+                    <img class="img-logo-principal" src="imagens/logo.jpeg">
                 </div>
 
+                <p class="p-informativo">
+                    Informe a <strong>cidade</strong> para visualizar um pokémon de acordo com o clima
+                </p>
+
+                <div class="div-form">
+                    <form class="form">
+                        <label>Cidade:</label>
+                        <input class="input-cidade" id="input-cidade" type="text" placeholder="Sumaré">
+                    </form>
+
+                    <input id="botao_buscar_pokemon" class="input-botao-buscar-pokemon" type="submit" value="Buscar Pokemon">
+                    </input>
+                
+                </div>
+
+                <div  id="div-principal-resultado" class="div-principal-resultado">
+                    
+                
+                        <div id="resultado_clima_e_temperatura">
+                            
+                        </div>
+
+                        <div id="div_img_do_pokemon" >
+
+                        </div>
+                        <p id="nome_do_pokemon"></p>
+                    
+                </div>
             </div>
             
         </div>
 
+   
+        
 
-
-      
      <!-- Caminho do Script JS -->
-    <script type="text/javaScript" src="js/busca_por_cidade.js"></script>
-
+     <script type="text/javaScript" src="js/busca_por_cidade.js"></script>
     </body>
 </html>

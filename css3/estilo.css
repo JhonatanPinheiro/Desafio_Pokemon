@@ -5,6 +5,15 @@
     justify-items: center;
     background: #FF9;
 }
+
+.div-conteudo-principal{
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    display: inline-block; 
+    background: #ff1; 
+}
+
 .div-form{
     background: rgb(104, 112, 96);
 }
@@ -52,5 +61,11 @@
 
 #nome_do_pokemon{
     text-transform: capitalize;
+    font-weight: 900;
+}
+
+.img-pokemon{
+    width: 12%;
+    border: 4px blue solid;
 }
 
