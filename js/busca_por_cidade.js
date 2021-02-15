@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#botao_buscar_pokemon").click(function () {
-        var cidade = $("#input-cidade").val();
+        var cidade = $("#input_cidade").val();
         var key = 'eed26403bd837bd4e1e09379c7a059ca';
 
         $.ajax({
@@ -10,22 +10,19 @@ $(document).ready(function () {
             data: { lang: 'pt_br', q: cidade, appid: key, units: 'metric' },
 
             success: function (data) {
-                console.log(data);
 
-                $("#input-cidade").val('');
+                $("#input_cidade").val('');
                 var temperatura = Math.round(data.main.temp);
-                var climaChuva = data.weather[0].description;//------------->
-                console.log(climaChuva);//--------->
-
+                var climaChuva = data.weather[0].main;
 
                 var tipoPokemon = '';
                 var climaResultado = '';
-
+              
 
 
                 $.each(data.weather, function (index, value) {
                     climaResultado += '<p><strong>' + data.name + "<p>" +
-                        temperatura + '&deg;C' + ' | ' + value.description
+                    temperatura + '&deg;C' + ' | ' + value.main + ' (' + value.description + ')'
                 });
                 console.log('Clima e Temperatura');
                 console.log(climaResultado);
@@ -33,42 +30,45 @@ $(document).ready(function () {
                 $("#resultado_clima_e_temperatura").html(climaResultado);
 
                 // Logica 
-                if (temperatura < 5 && climaChuva !== 'chovendo' || climaChuva !== "Chovendo" ) {
-                    tipoPokemon = 'ice';
-                }
+                if(climaChuva !== 'Rain'){
 
-                else if (temperatura >= 5 && temperatura < 10) {
-                    tipoPokemon = 'water';
-                }
+                    if (temperatura < 5 && climaChuva !== 'Rain') {
+                        tipoPokemon = 'ice';
+                        
+                    }
 
-                else if (temperatura >= 12 && temperatura < 15) {
-                    tipoPokemon = 'grass';
-                }
+                    else if (temperatura >= 5 && temperatura < 10) {
+                        tipoPokemon = 'water';
+                    }
 
-                else if (temperatura >= 15 && temperatura < 21) {
-                    tipoPokemon = 'ground';
-                }
+                    else if (temperatura >= 12 && temperatura < 15) {
+                        tipoPokemon = 'grass';
+                    }
 
-                else if (temperatura >= 23 && temperatura < 27) {
-                    tipoPokemon = 'bug';
-                }
+                    else if (temperatura >= 15 && temperatura < 21) {
+                        tipoPokemon = 'ground';
+                    }
 
-                else if (temperatura >= 27 && temperatura == 33) {
-                    tipoPokemon = 'rock';
-                }
+                    else if (temperatura >= 23 && temperatura < 27) {
+                        tipoPokemon = 'bug';
+                    }
 
-                else if (temperatura > 33) {
-                    tipoPokemon = 'fire';
-                }
+                    else if (temperatura >= 27 && temperatura <= 33) {
+                        tipoPokemon = 'rock';
+                    }
 
-                else if (climaChuva == 'chovendo') { 
-                    tipoPokemon = 'electric';
-                }
+                    else if (temperatura > 33) {
+                        tipoPokemon = 'fire';
+                    }
 
-                else {
-                    tipoPokemon = 'normal';
-                }
-
+                    else {
+                        tipoPokemon = 'normal';
+                    }
+                    
+                } else{
+                                                   
+                        tipoPokemon = 'electric';
+                    }
     
                 if (data) {
                     $.ajax({
@@ -97,7 +97,7 @@ $(document).ready(function () {
 
                                             var caminhoUrl = data.sprites.front_default;
 
-                                            $("#nome_do_pokemon").html("<span id='nome-do-pokemon'>" + pokemonEscolhidoAleatorio + "</span>");
+                                            $("#nome_do_pokemon").html("Pokemon: <span id='nome_do_pokemon'>" + pokemonEscolhidoAleatorio + "</span>" + "<br>" + "Tipo: " + tipoPokemon);
                                            
                                             $("#div_img_do_pokemon").html("<img class='img-pokemon' src='" + caminhoUrl + "'>");
 
@@ -115,7 +115,7 @@ $(document).ready(function () {
 
             error: function (error) {
                 console.log(error);
-                $("#postando_resultado").html(error.responseJSON.message);
+                $("#div_principal_resultado").html(error.responseJSON.message);
             }
 
         });

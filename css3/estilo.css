@@ -3,19 +3,23 @@
     text-align: center;
     justify-content: center;
     justify-items: center;
-    background: #FF9;
+    background: #FFF;
 }
 
 .div-conteudo-principal{
     width: 80%;
+    padding: 5px;
+    margin: 5px;
     align-items: center;
     text-align: center;
     display: inline-block; 
-    background: #ff1; 
+    background: rgb(233, 232, 231); 
+    border: 2px double rgba(104, 112, 96, 0.767) ;
 }
 
 .div-form{
-    background: rgb(104, 112, 96);
+    background: rgba(104, 112, 96, 0.719);
+    padding: 10px;
 }
 
 .img-logo-principal{
@@ -31,41 +35,32 @@
 }
 
 .form{
-    display: inline;
+    display: inline-block;
 }
 
 .input-cidade{
     margin: 8px 0;
-    width: 16%;
     text-align: center;
-   
-
+    display: inline-block;
 }
 
-.input-botao-buscar-pokemon{
+.botao-buscar-pokemon{
     margin: auto;
-    margin-bottom: 8px;
-    background: chocolate;
-    width: 10%;
-    min-width: 110px;
-    font-size: 13px;
-    text-align: center;
-   
-}
-
-
-
-.div-principal-resultado{
-    
+    min-width: 14%;
 }
 
 #nome_do_pokemon{
     text-transform: capitalize;
+    font-size: 100%;
+    text-indent: 2px;
     font-weight: 900;
+    display: inline;
+    align-items: auto;
+    width: 22%;
 }
 
 .img-pokemon{
     width: 12%;
-    border: 4px blue solid;
+    border-radius: 50%;
 }
 
