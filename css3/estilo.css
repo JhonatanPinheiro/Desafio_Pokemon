@@ -29,9 +29,9 @@
     
 }
 
-.p-informativo{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
+.fonte-google{
+    font-family: 'Roboto','Courier New', Courier, monospace,sans-serif;
+    font-size: 16px;
 }
 
 .form{
