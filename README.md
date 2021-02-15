@@ -1,7 +1,7 @@
 # Desafio_Pokemon
 Resolvendo o Desafio do Pokémon
 
- ## Explicação de como funciona a aplicação web
+ ## Explicação da funcionalidade da aplicação web
  
  Está aplicação web foi criado por mim (Jhonatan Pinheiro da Silva), com objetivo de encontrar pokemons de acordo com o clima do nosso planeta,
  por exemplo:
@@ -24,7 +24,7 @@ Resolvendo o Desafio do Pokémon
   - Temperatura atual da cidade em graus Celcius;
   - Se está chovendo ou não;
   - Descrição do Tempo
-  - Nome do Pokémon seguindo as regras acima.
+  - Nome do Pokémon, seguindo as regras acima.
   - Imagem do Pokémon 
   
   ## Tecnologias usadas na aplicação web
@@ -36,14 +36,14 @@ Resolvendo o Desafio do Pokémon
   - JavaScript (Linguagem de programação interpretada estruturada, de script em alto nível com tipagem dinâmica fraca e multiparadigma).
   - Jquery (Framework para Javascript).
   
-  ## APIS usandos na aplicação web
+  ## APIS usados na aplicação web
   
   Os APIs (Application Programming Interface) usados para o consumos de dados foram:
   -  OpenWeatherMap (Usado para consumir os dados da temperatura e clima da cidade informada pelo usuário.
   -  PokéAPI (Usado para consumir os dados do Pokemons referente aos nomes, tipos dos pokemons e imagens)
      Obs: A aplicação web consome esses dois APIs (OpenWeatherMap e PokéAPI) para agregar as informações.
   
-  ##Como usar a aplicação web
+  ## Como usar a aplicação web
     Somente abrir o arquivo index.html no seu browser, em seguida informar a cidade que deseja saber a seguintes informações que foram citadas e explicadas acima.
     
   
